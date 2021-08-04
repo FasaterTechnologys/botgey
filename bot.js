@@ -81,14 +81,14 @@ async function saveUsers()
 	return true;
 }
 
-vk.setOptions({ token: '06665d2129aadd41f1d392b89be59ab7674e81e6556fdbd552b77435dffe4d83c617179f52e787e64cc18', pollingGroupId: 196962360 });
+vk.setOptions({ token: 'хуй', pollingGroupId: залупа });
 const { updates, snippets } = vk;
 
 
 updates.startPolling();
 updates.on('message', async (message) => {
 	if(Number(message.senderId) <= 0) return;
-	if(/\[club196962360\|(.*)\]/i.test(message.text)) message.text = message.text.replace(/\[club196962360\|(.*)\]/ig, '').trim();
+	if(/\[clubзалупа\|(.*)\]/i.test(message.text)) message.text = message.text.replace(/\[clubзалупа\|(.*)\]/ig, '').trim();
 
 	if(!users.find(x=> x.id === message.senderId))
 	{
